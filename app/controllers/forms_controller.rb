@@ -7,7 +7,13 @@ class FormsController < ApplicationController
   end
 
   def create
-    Form.create(name: params[:form][:name], email: params[:form][:email], content: params[:form][:content])
+    Form.create(form_params)
     redirect_to new_form_path
+  end
+
+  private
+
+  def form_params
+    params.require(:form).permit(:name, :email, :content)
   end
 end
