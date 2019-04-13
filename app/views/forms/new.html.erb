@@ -12,15 +12,15 @@
 
   <div class="form_title">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, size:25, maxlength:140 %>
   </div>
   <div class="form_title">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, size:25, maxlength:140 %>
   </div>
   <div class="form_title">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, size:25, maxlength:140 %>
   </div>
   <%= form.submit %>
 <% end %>
