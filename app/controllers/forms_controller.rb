@@ -8,6 +8,6 @@ class FormsController < ApplicationController
 
   def create
     Form.create(name: params[:form][:name], email: params[:form][:email], content: params[:form][:content])
-    redirect_to '/forms/new'
+    redirect_to new_form_path
   end
 end
