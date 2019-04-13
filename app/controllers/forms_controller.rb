@@ -7,8 +7,12 @@ class FormsController < ApplicationController
   end
 
   def create
-    Form.create(form_params)
-    redirect_to new_form_path
+    @form = Form.create(form_params)
+    if @form.save
+      redirect_to new_form_path, notice: 'お問い合わせを送信しました！'
+    else
+      render 'new'
+    end
   end
 
   private
