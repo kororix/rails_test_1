@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get '/forms', to: 'forms#index'
-  resources :forms
+  resources :forms, only: [:new, :create] 
 end

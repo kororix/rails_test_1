@@ -1,5 +1,3 @@
 class Form < ApplicationRecord
-  validates :name, length: { maximum: 140 }, presence: true
-  validates :email, length: { maximum: 140 }, presence: true
-  validates :content, length: { maximum: 140 }, presence: true
+  validates :name, :email, :content, length: { in: 1..140 }
 end
